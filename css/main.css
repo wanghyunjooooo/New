@@ -19,6 +19,7 @@ body {
 }
 
 .sub-content {
+    overflow: hidden; /* phone 화면 밖의 슬라이드 부분을 숨기기 */
     display: flex;
     justify-content: center;
     position: absolute;
@@ -26,6 +27,18 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+}
+
+.slider-container {
+    clip-path: inset(0 55px); /* 상, 우, 하, 좌의 여백을 각각 설정 (여기서는 좌우 10px씩 안쪽으로 숨김) */
+    position: absolute;
+    top: 15%; /* phone 화면 안에 슬라이더 위치 */
+    left: 5%; /* 살짝 안쪽으로 이동시킴 */
+    width: 90%; /* slider 너비를 phone 안에 맞춤 */
+    height: 70%; /* slider 높이 조절 */
+    overflow: hidden; /* 슬라이드된 부분은 숨김 */
+    z-index: 1; /* 슬라이더가 phone 이미지 위에 위치 */
+    border-radius: 10px; /* 경계선 부드럽게 */
 }
 
 .sub-content img {
@@ -44,3 +57,112 @@ body {
     justify-content: center;
 }
 
+.icons {
+    position: absolute;
+    top: 15%; /* 폰 위쪽에 위치하도록 설정 */
+    left: 51%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icons img {
+    width: 100%; /* 아이콘 크기 설정 */
+    margin-bottom: 10px; /* 각 아이콘 사이 간격 */
+}
+
+.music-var img{
+    width: 125%;
+}
+.music-var {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.music-player {
+    display: flex;
+    justify-content: space-between;
+    width: 100px; /* 음악 플레이어 아이콘 간격 설정 */
+}
+
+.music-player img {
+    width: 40px;
+}
+
+.music-var {
+    position: relative; /* 음악 플레이어를 올리기 위한 기준 */
+}
+
+/* 음악 플레이어를 music-var 위에 겹치도록 설정 */
+.music-player {
+    position: absolute;
+    top: 10%;
+    left: 95%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.music-player-start, .music-player-stop {
+    margin: 0 5px;
+}
+
+.bi {
+    font-size: 35px; /* 아이콘 크기 설정 */
+}
+
+.hidden {
+    display: none;
+}
+
+
+.mv-slider {
+    width: 200%; /* 슬라이드할 수 있게 넓이 설정 */
+    display: flex; /* Flexbox로 나란히 정렬 */
+    justify-content: space-between; /* 이미지를 양쪽 끝에 정렬 */
+    gap: 20px; /* 이미지 사이 간격 */
+    margin-top: 20px; /* 상단에서 간격 추가 */
+    position: absolute;
+    top: 16%;  /* phone 안의 적절한 위치로 조정 */
+    left: 24%; /* phone 안의 적절한 위치로 조정 */
+    width: 50vw; /* 슬라이더의 적절한 너비 */
+    width: 110%;
+    height: 60%;
+    z-index: 2; /* phone 위에 올리기 */
+    overflow: hidden; /* 슬라이드 외부는 숨김 */
+    transition: transform 1s ease-in-out;
+}
+
+.mv-slider img {
+    width: 100%; /* 각 이미지가 슬라이더의 100%를 차지 */
+}
+
+.mv-img, .mv-practice-img {
+    position: relative; /* 절대 위치 대신 상대적 위치 */
+    flex: 1; /* Flexbox 안에서 각 이미지가 균등한 공간 차지 */
+}
+
+
+.dragging {
+    cursor: grabbing;
+}
+
+.other-page {
+    position: absolute;
+    top: 77%;  /* 화면 상단에 위치 */
+    left: 0; /* 필요에 따라 위치 조정 가능 */
+    width: 100%; /* 전체 너비 차지 */
+    display: flex;
+    justify-content: center;
+    z-index: 2; 
+}
+
+.other-page img{
+    padding: 7px;
+}
+    
