@@ -166,3 +166,98 @@ body {
     padding: 7px;
 }
     
+/* 768px 이하의 화면에서는 레이아웃을 조정 */
+@media (max-width: 1025px) {
+    .main-content img {
+        width: 60%;
+    }
+
+    .sub-content{
+        width: 50%;
+    }
+    
+    .icons {
+        width: 50%;
+    }
+    .music-player {
+        display: flex;
+        width: 100%; /* 너비를 적절하게 조정 */
+        top: 10px;
+    }
+
+    .music-player img {
+        width: 30px; /* 이미지가 보일 수 있게 크기 조정 */
+    }
+
+    .music-player-start, .music-player-stop {
+        font-size: 20px; /* 아이콘 크기 조정 */
+    }
+
+    .bi{
+        font-size: 30px;
+    }
+
+    .other-page {
+        top: 70%;
+    }
+
+    .other-page img{
+        margin: 5px;
+        width: 74%;
+    }
+
+    .other-page {
+        left: 5px;
+        top: 70%;
+    }
+
+    .other-page img{
+        margin: 5px;
+        padding: 3px;
+        width: 80%;
+    }
+
+}
+
+/* 480px 이하의 화면에서는 더 작은 디바이스에 맞춰 레이아웃을 변경 */
+@media (max-width: 480px) {
+    .main-content img {
+        width: 90%;
+    }
+
+    .sub-content{
+        width: 100%;
+    }
+
+    .music-player {
+        display: flex;
+        width: 100%; /* 너비를 적절하게 조정 */
+        top: 7px;
+    }
+
+    .music-player img {
+        width: 30px; /* 이미지가 보일 수 있게 크기 조정 */
+    }
+
+    .music-player-start, .music-player-stop {
+        font-size: 30px; /* 아이콘 크기 조정 */
+    }
+
+    .mv-slider img {
+        width: 100%;
+    }
+
+    .icons {
+        width: 50%;
+    }
+
+    .other-page {
+        top: 73%;
+    }
+
+    .other-page img{
+        margin: 4px;
+        width: 69%;
+    }
+
+}
