@@ -65,3 +65,24 @@ function animation() {
 function setSliderPosition() {
     slider.style.transform = `translateX(${currentTranslate}px)`;
 }
+
+
+        // 오디오 요소 가져오기
+        const audio = document.getElementById('drunk-shot-audio');
+        const playButton = document.querySelector('.music-player-start');
+        const stopButton = document.querySelector('.music-player-stop');
+
+        // 재생 버튼 클릭 이벤트
+        playButton.addEventListener('click', function() {
+            audio.play();  // 음악 재생
+            playButton.classList.add('hidden'); // 재생 버튼 숨기기
+            stopButton.classList.remove('hidden'); // 정지 버튼 보이기
+        });
+
+        // 정지 버튼 클릭 이벤트
+        stopButton.addEventListener('click', function() {
+            audio.pause();  // 음악 일시정지
+            audio.currentTime = 0;  // 음악을 처음으로 되돌리기
+            stopButton.classList.add('hidden'); // 정지 버튼 숨기기
+            playButton.classList.remove('hidden'); // 재생 버튼 보이기
+        });
