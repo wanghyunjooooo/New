@@ -69,7 +69,7 @@ body {
     left: 20%;
 }
 
-.download {
+.download h6{
     top: 50px;
     left: 60%; /* download 버튼이 home과 겹치지 않도록 위치 조정 */
 }
