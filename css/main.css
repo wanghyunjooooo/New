@@ -69,4 +69,39 @@ body {
     display: flex; /* Flexbox 사용 */
     gap: 50px; /* 아이콘 사이 간격 설정 */
 }
+.icons {
+    position: absolute; /* 절대 위치로 설정 */
+    top: 73%; /* 위치 조정 (필요에 따라 조정) */
+    left: 50%; /* 부모 요소의 가로 중앙에 위치 */
+    transform: translate(-50%, -50%); /* 요소의 중심을 왼쪽으로 이동하여 정중앙에 맞춤 */
+    z-index: 6; /* 가장 위에 오도록 설정 */
+}
 
+.icons-background,
+.icons-img {
+    position: absolute; /* 절대 위치로 설정 */
+    top: 50%; /* 부모 요소의 세로 중앙 */
+    left: 50%; /* 부모 요소의 가로 중앙 */
+    transform: translate(-50%, -50%); /* 요소의 중심을 정중앙에 맞춤 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.icons-img img {
+    width: 50px; /* 아이콘의 너비를 50px로 설정 (원하는 크기로 변경 가능) */
+    height: 50px; /* 아이콘의 높이를 50px로 설정 (원하는 크기로 변경 가능) */
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 480px) {
+    
+}
