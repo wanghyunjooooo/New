@@ -52,11 +52,20 @@ body {
     z-index: 3; /* 배경이 더 아래에 위치하도록 설정 */
 }
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .new-song-player {
     position: absolute; /* 절대 위치로 설정 */
     top: 10%;
     left: -80px; /* 플레이어를 더 왼쪽으로 이동 */
     z-index: 4; /* 플레이어가 배경 위에 오도록 설정 */
+    transition: all 0.3s ease;
+}
+.new-song-player.spin {
+    animation: spin 2s linear infinite; /* 회전 애니메이션 */
 }
 
 .song-icons {   
@@ -65,7 +74,7 @@ body {
     top: 80%; /* 배경과 겹치도록 위치 조정 */
     left: -130px; /* 배경과 겹치도록 위치 조정 */
     z-index: 5; /* 가장 위에 오도록 설정 */
-    font-size: 24px; /* 아이콘 크기 설정 (원하는 크기로 변경 가능) */
+    font-size: 30px; /* 아이콘 크기 설정 (원하는 크기로 변경 가능) */
     display: flex; /* Flexbox 사용 */
     gap: 50px; /* 아이콘 사이 간격 설정 */
 }
