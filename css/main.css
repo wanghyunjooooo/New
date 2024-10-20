@@ -10,17 +10,63 @@ body {
 
 .nct-logo {
     position: relative; /* 기준점 설정 */
-    z-index: 1; /* 로고가 더 뒤에 위치하도록 설정 */
+    z-index: -2; /* 로고가 더 뒤에 위치하도록 설정 */
     display: flex;
     justify-content: center;
 }
 
 .desktop-img {
     position: absolute; /* 절대 위치로 설정 */
-    top: 30%; /* 로고와 같은 위치에 배치 */
+    top: 30%; /* 위치 조정 */
     left: 50%; /* 부모 요소의 가로 중앙에 위치 */
     transform: translateX(-50%); /* 이미지의 중심을 왼쪽으로 이동하여 정중앙에 맞춤 */
-    z-index: 2; /* 로고 위에 오도록 설정 */
+    z-index: -1; /* 로고 위에 오도록 설정 */
 }
 
+.items {
+    position: absolute; /* 절대 위치로 설정 */
+    top: 40%; /* desktop-img 위에 배치되도록 설정 */
+    left: 57%; /* 부모 요소의 가로 중앙에 위치 */
+    transform: translateX(-50%); /* 요소의 중심을 왼쪽으로 이동하여 정중앙에 맞춤 */
+    z-index: 3; /* desktop-img 위에 오도록 설정 */
+    display: flex; /* Flexbox 설정 */
+    justify-content: center; /* 중앙 정렬 */
+    gap: 50px; /* 요소 간 간격 설정 */
+}
+
+.new-song, .mv, .mv-pratice {
+    display: flex;
+    justify-content: space-between; /* 세로 정렬 */
+    align-items: center;
+}
+
+.new-song {
+    position: relative; /* 기준점 설정 */
+    left: -140px;
+}
+
+.new-song-background {
+    position: absolute; /* 절대 위치로 설정 */
+    top: 0;
+   left: -125px;
+    z-index: 3; /* 배경이 더 아래에 위치하도록 설정 */
+}
+
+.new-song-player {
+    position: absolute; /* 절대 위치로 설정 */
+    top: 10%;
+    left: -80px; /* 플레이어를 더 왼쪽으로 이동 */
+    z-index: 4; /* 플레이어가 배경 위에 오도록 설정 */
+}
+
+.song-icons {   
+    transform: translate(-50%, -50%); /* 요소의 중심을 기준으로 정중앙에 배치 */
+    position: absolute; /* 절대 위치로 설정 */
+    top: 80%; /* 배경과 겹치도록 위치 조정 */
+    left: -130px; /* 배경과 겹치도록 위치 조정 */
+    z-index: 5; /* 가장 위에 오도록 설정 */
+    font-size: 24px; /* 아이콘 크기 설정 (원하는 크기로 변경 가능) */
+    display: flex; /* Flexbox 사용 */
+    gap: 50px; /* 아이콘 사이 간격 설정 */
+}
 
