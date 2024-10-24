@@ -36,29 +36,42 @@ body {
 
 .items {
     display: flex;
-    justify-content: center;
+    flex-direction: row; /* 가로로 요소를 배치 */
+    justify-content: space-between; /* 요소들 사이에 공간을 균등하게 분배 */
     align-items: center;
-    gap: 50px;
-    flex-wrap: wrap; /* 화면이 작아지면 줄바꿈 */
-    position: absolute; /* 절대 위치 설정 */
-    top: 50%; /* 화면 중앙 근처에 배치 */
-    left: 50%; /* 가로 중앙에 배치 */
-    transform: translate(-50%, -50%); /* 정확히 중앙에 정렬 */
-    z-index: 3; /* desktop-img 위에 배치 */
+    width: 720px; /* 부모 요소의 가로 크기를 차지하도록 설정 */
+    position: absolute;
+    z-index: 3;
+    gap: 20px; /* 요소들 사이의 간격을 줄임 */
+    left: 50%;
+    transform: translateX(-50%); /* 중앙에서 맞추기 */
+    margin-left: 60px; /* 살짝 오른쪽으로 이동 */
+    
+}
+.mv-container {
+    display: flex;
+    flex-direction: row; /* mv와 mv-pratice를 가로로 정렬 */
+    gap: 30px; /* mv와 mv-pratice 사이의 간격 조정 */
 }
 
-.new-song, .mv, .mv-pratice {
+
+
+.new-song,
+.mv,
+.mv-pratice {
+    margin-top: 20px; /* 요소들 간 간격 조정 */
     display: flex;
-    flex-direction: column; /* 요소들이 세로로 정렬되도록 설정 */
+    flex-direction: column; /* 요소가 세로로 정렬되도록 설정 */
     justify-content: center;
     align-items: center;
-    max-width: 300px; /* 각 요소의 최대 너비를 설정 */
-}
+    max-width: 300px;
+}   
+
 
 
 .new-song-background {
     position: absolute; /* 절대 위치로 설정 */
-    top: 0;
+    top: 10px;
     z-index: 3; /* 배경이 더 아래에 위치하도록 설정 */
 }
 
@@ -80,11 +93,13 @@ body {
 
 
 .song-icons {
+    left: 5px;
+    top: 240px;
     position: absolute; /* 절대 위치로 설정하여 부모 요소를 기준으로 위치 조정 */
     transform: translate(-50%, -50%); /* 아이콘의 중심을 기준으로 정렬 */
     z-index: 3; /* 배경 위에 오도록 설정 */
     display: flex;
-    gap: 40px; /* 아이콘 사이의 간격 설정 */
+    gap: 50px; /* 아이콘 사이의 간격 설정 */
     font-size: 30px; /* 아이콘 크기 설정 */
 }
 
