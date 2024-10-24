@@ -5,50 +5,60 @@
 
 /* 전체 페이지 배경을 검정색으로 설정 */
 body {
-    background-color: black;
+        background-color: black;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 두 개의 열로 분할 */
+        grid-template-rows: auto; /* 행은 콘텐츠에 맞춰 자동 설정 */
+        justify-items: center; /* 그리드 내 아이템들을 가로로 중앙 정렬 */
+        align-items: center; /* 세로로 중앙 정렬 */
+        height: 100vh;
+    
 }
 
 .nct-logo {
-    position: relative; /* 기준점 설정 */
-    z-index: -2; /* 로고가 더 뒤에 위치하도록 설정 */
+    grid-column: 1 / -1; /* 전체 열을 차지하도록 설정 */
+    justify-self: center; /* 가로 중앙에 배치 */
+    align-self: start; /* 세로로 상단에 배치 */
+    margin-top: 20px; /* 로고를 화면 위쪽에 더 가깝게 배치 */
+    z-index: -2; /* 로고가 다른 요소들보다 뒤에 위치하도록 설정 */
     display: flex;
     justify-content: center;
 }
 
+
 .desktop-img {
-    position: absolute; /* 절대 위치로 설정 */
-    top: 30%; /* 위치 조정 */
-    left: 50%; /* 부모 요소의 가로 중앙에 위치 */
-    transform: translateX(-50%); /* 이미지의 중심을 왼쪽으로 이동하여 정중앙에 맞춤 */
-    z-index: -1; /* 로고 위에 오도록 설정 */
+    position: absolute;
+    top: 30%; /* desktop-img의 위치를 화면 중앙에 더 가깝게 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1; /* 다른 요소 뒤에 배치 */
 }
 
 .items {
-    position: absolute; /* 절대 위치로 설정 */
-    top: 40%; /* desktop-img 위에 배치되도록 설정 */
-    left: 57%; /* 부모 요소의 가로 중앙에 위치 */
-    transform: translateX(-50%); /* 요소의 중심을 왼쪽으로 이동하여 정중앙에 맞춤 */
-    z-index: 3; /* desktop-img 위에 오도록 설정 */
-    display: flex; /* Flexbox 설정 */
-    justify-content: center; /* 중앙 정렬 */
-    gap: 50px; /* 요소 간 간격 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* 화면이 작아지면 줄바꿈 */
+    position: absolute; /* 절대 위치 설정 */
+    top: 50%; /* 화면 중앙 근처에 배치 */
+    left: 50%; /* 가로 중앙에 배치 */
+    transform: translate(-50%, -50%); /* 정확히 중앙에 정렬 */
+    z-index: 3; /* desktop-img 위에 배치 */
 }
 
 .new-song, .mv, .mv-pratice {
     display: flex;
-    justify-content: space-between; /* 세로 정렬 */
+    flex-direction: column; /* 요소들이 세로로 정렬되도록 설정 */
+    justify-content: center;
     align-items: center;
+    max-width: 300px; /* 각 요소의 최대 너비를 설정 */
 }
 
-.new-song {
-    position: relative; /* 기준점 설정 */
-    left: -140px;
-}
 
 .new-song-background {
     position: absolute; /* 절대 위치로 설정 */
     top: 0;
-   left: -125px;
     z-index: 3; /* 배경이 더 아래에 위치하도록 설정 */
 }
 
@@ -68,16 +78,16 @@ body {
     animation: spin 2s linear infinite; /* 회전 애니메이션 */
 }
 
-.song-icons {   
-    transform: translate(-50%, -50%); /* 요소의 중심을 기준으로 정중앙에 배치 */
-    position: absolute; /* 절대 위치로 설정 */
-    top: 80%; /* 배경과 겹치도록 위치 조정 */
-    left: -130px; /* 배경과 겹치도록 위치 조정 */
-    z-index: 5; /* 가장 위에 오도록 설정 */
-    font-size: 30px; /* 아이콘 크기 설정 (원하는 크기로 변경 가능) */
-    display: flex; /* Flexbox 사용 */
-    gap: 50px; /* 아이콘 사이 간격 설정 */
+
+.song-icons {
+    position: absolute; /* 절대 위치로 설정하여 부모 요소를 기준으로 위치 조정 */
+    transform: translate(-50%, -50%); /* 아이콘의 중심을 기준으로 정렬 */
+    z-index: 3; /* 배경 위에 오도록 설정 */
+    display: flex;
+    gap: 40px; /* 아이콘 사이의 간격 설정 */
+    font-size: 30px; /* 아이콘 크기 설정 */
 }
+
 .icons {
     position: absolute; /* 절대 위치로 설정 */
     top: 73%; /* 위치 조정 (필요에 따라 조정) */
