@@ -133,29 +133,3 @@ body {
 }
 
 
-
-@media screen and (max-width: 1367px) {
-    .mv-container {
-        display: flex;
-        flex-direction: row; /* mv와 mv-pratice를 가로로 정렬 */
-        gap: 30px; /* mv와 mv-pratice 사이의 간격 조정 */
-    }
-    .items {
-        position: absolute; /* absolute 위치 설정 */
-        display: flex;
-        flex-direction: row; /* 가로로 요소를 배치 */
-        justify-content: space-between; /* 요소들 사이에 공간을 균등하게 분배 */
-        align-items: center;
-        width: 720px; /* 부모 요소의 가로 크기를 차지하도록 설정 */
-        margin-top: 100px;
-        z-index: 3;
-        gap: 20px; /* 요소들 사이의 간격을 줄임 */
-        left: 50%;
-        transform: translateX(-50%); /* 중앙에서 맞추기 */
-        margin-left: 60px; /* 살짝 오른쪽으로 이동 */
-    }
-    .icons {
-        top: 90%; /* 세로 위치 조정 */
-    }
-}
-
