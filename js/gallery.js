@@ -14,13 +14,30 @@ let currentIndex = 0;  // 현재 이미지 인덱스
 document.getElementById('change-image').addEventListener('click', function() {
     currentIndex = (currentIndex + 1) % images.length;  // 인덱스를 1씩 증가시키고, 배열의 길이로 나누어 순환
     document.getElementById('image-to-change').src = images[currentIndex];  // 이미지 변경
+
+    // 다운로드 링크도 변경
+    updateDownloadLink();
 });
 
 // 반대로 이동하는 버튼 클릭 시, 이미지 거꾸로 변경
 document.getElementById('reverse-image').addEventListener('click', function() {
     currentIndex = (currentIndex - 1 + images.length) % images.length;  // 인덱스를 1씩 감소시키고, 배열의 길이로 나누어 순환
     document.getElementById('image-to-change').src = images[currentIndex];  // 이미지 변경
+
+      // 다운로드 링크도 변경
+      updateDownloadLink();
 });
+
+// 다운로드 링크를 동적으로 변경하는 함수
+function updateDownloadLink() {
+    const downloadLink = document.getElementById('download');
+    const currentImage = images[currentIndex];  // 현재 표시된 이미지
+
+    // 현재 이미지 이름을 다운로드 파일명으로 사용
+    const imageName = currentImage.split('/').pop();  // 'img/gallery-유우시1.jpg' -> '유우시1.jpg'
+    downloadLink.href = currentImage;  // 링크의 href를 현재 이미지로 설정
+    downloadLink.download = imageName;  // 다운로드 시 사용할 파일명 설정
+}
 
  // 전체 <a> 태그 클릭 시 다운로드를 막는 함수
  document.getElementById('download').addEventListener('click', function(event) {
