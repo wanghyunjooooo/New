@@ -68,3 +68,72 @@ body {
     margin-left: 100px;
     width: 120px;
 }
+
+#ipad{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    #desktop {
+        display: none; /* 이미지를 숨김 */
+    }
+    
+    #ipad{
+        position: relative; /* 자식 요소들이 부모를 기준으로 배치되도록 */
+        display: block;
+        width: 768px;
+        height: 1024px;
+    }
+
+    .home-var{
+        position: absolute;
+        top: 40%; /* sub-content 내부에서 겹치게 배치 */
+        left: 55%;
+        transform: translate(-50%, -30%);
+        z-index: 3; /* desktop 위로 배치 */
+        color: white;
+        display: flex;
+        gap: 10px;
+    }
+
+
+    #home, #download {
+        position: absolute; /* #ipad를 기준으로 위치 설정 */
+        width: 100%; /* 너비 100%로 설정 */
+        top: -20%; /* 상단에 배치 */
+    }
+
+    #download {
+        position: absolute;
+        right: -5%; /* 오른쪽 끝에 배치 */
+        top: -13%; /* 상단에 배치 */
+        width: 50%; /* 너비를 50%로 설정해서 오른쪽에 위치하게 */
+        height: 100%; /* 부모 높이에 맞게 */
+    }
+    #download svg{
+        margin-top: 0px;
+    }
+    #home {
+        position: absolute;
+        left: 0%; /* 왼쪽 끝에 배치 */
+        top: -20%; /* 상단에 배치 */
+        width: 50%; /* 너비를 50%로 설정해서 왼쪽에 위치하게 */
+        height: 100%; /* 부모 높이에 맞게 */
+    }
+
+   .icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+    gap: 10px; /* 아이콘과 이미지 사이 간격 */
+   }
+    
+   .bi {
+    font-size: 100px; /* 아이콘 크기 */
+    cursor: pointer;
+}
+
+}
