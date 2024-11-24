@@ -1,90 +1,70 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-/* 전체 페이지 배경을 검정색으로 설정 */
 body {
     background-color: black;
-}
-.main-content {
     position: relative;
+}
+
+.main-content {
     display: flex;
     justify-content: center;
     z-index: 1;
 }
 
-.main-content img {
-    width: 40%;
-}
-
 .sub-content {
-    overflow: hidden; /* phone 화면 밖의 슬라이드 부분을 숨기기 */
+    width: 110%;
+    position: absolute;
     display: flex;
     justify-content: center;
-    position: absolute;
-    top: 60%; /* 원하는 위치로 조정 가능 */
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 80%;
+    left: -5%;
     z-index: 2;
 }
 
-.slider-container {
-    clip-path: inset(0 55px); /* 상, 우, 하, 좌의 여백을 각각 설정 (여기서는 좌우 10px씩 안쪽으로 숨김) */
+.home-var {
     position: absolute;
-    top: 15%; /* phone 화면 안에 슬라이더 위치 */
-    left: 5%; /* 살짝 안쪽으로 이동시킴 */
-    width: 90%; /* slider 너비를 phone 안에 맞춤 */
-    height: 70%; /* slider 높이 조절 */
-    overflow: hidden; /* 슬라이드된 부분은 숨김 */
-    z-index: 1; /* 슬라이더가 phone 이미지 위에 위치 */
-    border-radius: 10px; /* 경계선 부드럽게 */
-}
-
-.sub-content img {
-    width: 90%;
-}
-
-.sub-content-var img {
-    width: 50%; 
-}
-
-.sub-content-var {
-    position: absolute;
-    top: 81%;
-    width: 134%; 
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
     display: flex;
+    gap: 10px;
+}
+
+.home-var svg {
+    margin-top: 20px; /* 원하는 만큼 아래로 이동 */
+    width: 70px; /* SVG 크기 조정 */
+    height: auto;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 10px; /* 아이콘과 이미지 사이 간격 */
 }
 
-.home, .download {
-    position: absolute;
-    top: 10px; /* 원하는 위치로 조정 */
-    left: 20px; /* home과 download의 위치를 설정 */
-    z-index: 10; /* phone 이미지 위로 올라오게 설정 */
+.center-img {
+    width: 330px; /* 이미지 크기 조정 */
+    height: auto;
 }
 
-.home{
-    top:50px;
-    left: 20%;
+.bi {
+    font-size: 50px; /* 아이콘 크기 */
+    cursor: pointer;
 }
 
-.download{
-    top: 50px;
-    left: 60%; /* download 버튼이 home과 겹치지 않도록 위치 조정 */
-}
-
-.home a h6 {
-    margin: 0;
-    text-decoration: none;
-    font-size: 14px;
-    color: #fff;
-}
-
-.home a h6:hover {
-    color: #fff;
+#home{
+    display: inline-block;
+    width: 70px; /* SVG의 크기만큼 크기 설정 */
+    height: 70px; /* SVG의 크기만큼 높이 설정 */
+    margin-right: 100px;
+    padding: 10px;
+    color: white;
     text-decoration: none;
 }
 
-
-
+#download svg{
+    margin-top: 40px;
+    margin-left: 60px;
+    width: 120px;
+}
