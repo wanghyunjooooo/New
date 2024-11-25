@@ -73,6 +73,9 @@ body {
     display: none;
 }
 
+#mobile-image {
+    display: none; /* 기본적으로 숨김 */
+}
 
 
 @media screen and (max-width: 1024px) and (orientation: portrait) {
@@ -113,7 +116,7 @@ body {
         height: 100%; /* 부모 높이에 맞게 */
     }
     #download svg{
-        margin-top: 0px;
+        margin-top: 5px;
     }
     #home {
         position: absolute;
@@ -136,4 +139,98 @@ body {
     cursor: pointer;
 }
 
+
+
+}
+
+@media screen and (max-width: 768px){
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .main-content img{
+        width: 100%; /* 전체 화면 너비의 90% */
+        max-width: 1300px; /* 최대 너비를 제한 */
+        margin: 30px 0px 0px 30px; /* 가운데 정렬 */
+        padding: 20px; /* 내부 여백 */
+        box-sizing: border-box; /* padding 포함한 크기 계산 */
+    }
+    
+    .main-content, .sub-content {
+        width: 100%;
+        text-align: center; /* 가운데 정렬 */
+    }
+    #ipad {
+        display: none; /* iPad 이미지를 숨김 */
+    }
+    .sub-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+
+    #mobile-image {
+        position: relative;
+        left: 10%;
+        display: block; /* 모바일 이미지를 표시 */
+        display: flex;
+        justify-content: center;
+        text-align: center; /* 중앙 정렬 */
+    }
+
+    #home, #download {
+        position: absolute;
+        top: -250px; /* 화면 상단에서 10px 떨어지게 */
+        left: 50%; /* 중앙 정렬 */
+        transform: translateX(-700%); /* 가로 중심 보정 */
+        z-index: 10; /* 다른 요소보다 위로 올리기 */
+    }
+
+    #download svg{
+        margin: 5px 0px 0px 0px;
+    }
+
+    #home {
+        left: 25%; /* 왼쪽으로 이동 */
+    }
+
+    #download {
+        left: 60px; /* 오른쪽으로 이동 */
+    }
+
+    #mobile-image img {
+        width: 100%; /* 모바일 화면에 맞게 이미지 크기 조정 */
+        height: auto; /* 비율 유지 */
+    }
+
+    .icon-container {
+        position: absolute; /* #mobile-image 내부에 배치 */
+        top: 50%; /* 상단 기준 위치 */
+        left: 50%; /* 왼쪽 기준 위치 */
+        transform: translate(-42%, -41%); /* 가운데 정렬 */
+        display: flex; /* 아이콘 정렬 */
+        gap: 10px; /* 아이콘 간격 */
+    }
+    .icon-container i {
+        position: absolute; /* 이미지 위에 올리기 */
+        top: 50%; /* 세로 중앙 배치 */
+        transform: translateY(-50%); /* 세로 정렬 보정 */
+    }
+
+    #reverse-image {
+        left: -25px; /* 왼쪽 아이콘 위치 */
+    }
+    
+    #change-image {
+        right: -25px; /* 오른쪽 아이콘 위치 */
+    }
+
+    .home-var svg{
+        margin-top: 0px;
+    }
+    
+    
 }
