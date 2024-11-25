@@ -1,0 +1,63 @@
+body {
+    background-color: black;
+    position: relative;
+    margin: 0; /* 여백 제거 */
+    padding: 0; /* 여백 제거 */
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+#ipad {
+    display: none;
+}
+
+#mobile-image {
+    display: none; /* 기본적으로 숨김 */
+}
+
+.items {
+    width: 100%; /* 부모 요소를 기준으로 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    top: -70px; /* 필요하면 조정 */
+}
+
+.facetime-var{
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-130%, -50%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    display: flex;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-facetime{
+    transform: translate(30%, 0%);
+}
+
+#video {
+    width: 550px;
+    height: 600px;
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-15%, -50%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    gap: 15px;
+  }
+  
