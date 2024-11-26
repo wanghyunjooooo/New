@@ -143,7 +143,7 @@ body {
 
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
     * {
         margin: 0;
         padding: 0;
@@ -174,7 +174,7 @@ body {
 
     #mobile-image {
         position: relative;
-        left: 10%;
+        margin-left: 15%;
         display: block; /* 모바일 이미지를 표시 */
         display: flex;
         justify-content: center;
@@ -194,11 +194,11 @@ body {
     }
 
     #home {
-        left: 25%; /* 왼쪽으로 이동 */
+        left: -20px; /* 왼쪽으로 이동 */
     }
 
     #download {
-        left: 60px; /* 오른쪽으로 이동 */
+        left: 50px; /* 오른쪽으로 이동 */
     }
 
     #mobile-image img {
@@ -210,14 +210,14 @@ body {
         position: absolute; /* #mobile-image 내부에 배치 */
         top: 50%; /* 상단 기준 위치 */
         left: 50%; /* 왼쪽 기준 위치 */
-        transform: translate(-42%, -41%); /* 가운데 정렬 */
+        transform: translate(-45%, -40%); /* 가운데 정렬 */
         display: flex; /* 아이콘 정렬 */
         gap: 10px; /* 아이콘 간격 */
     }
     .icon-container i {
         position: absolute; /* 이미지 위에 올리기 */
         top: 50%; /* 세로 중앙 배치 */
-        transform: translateY(-50%); /* 세로 정렬 보정 */
+        transform: translateY(-40%); /* 세로 정렬 보정 */
     }
 
     #reverse-image {
