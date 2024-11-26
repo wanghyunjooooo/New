@@ -66,6 +66,10 @@ body {
   .new-facetime-ipad{
     display: none;
   }
+
+  .facetime-list-phone{
+    display: none;
+  }
   
   @media screen and (max-width: 1024px) and (orientation: portrait) {
     #desktop {
@@ -110,3 +114,60 @@ body {
 
 
   }
+
+@media screen and (max-width: 767px){
+    #ipad{
+        display: none;
+    }
+
+    #mobile-image{
+        display: block;
+        margin-left: 10%;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .main-content img{
+        width: 100%; /* 전체 화면 너비의 90% */
+        max-width: 1300px; /* 최대 너비를 제한 */
+        margin: 30px 0px 0px 30px; /* 가운데 정렬 */
+        padding: 20px; /* 내부 여백 */
+        box-sizing: border-box; /* padding 포함한 크기 계산 */
+    }
+
+    .new-facetime-ipad{
+        display: none;
+    }
+
+    .facetime-list-ipad{
+        display: none;
+    }
+
+    .new-facetime{
+        display: block;
+    }
+
+    #video{
+        display: none;
+    }
+
+    .facetime-list-phone{
+        display: block;
+    }
+
+    .facetime-var{
+        transform: translate(-50%, -45%);
+    }
+
+    .facetime-var a{
+        transform: translate(20%, 190%);
+    }
+
+    #new-facetime{
+        transform: translate(40%, -95%);
+    }
+
+
+}
