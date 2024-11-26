@@ -1,0 +1,86 @@
+body {
+    background-color: black;
+    position: relative;
+    margin: 0; /* 여백 제거 */
+    padding: 0; /* 여백 제거 */
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.items {
+    width: 100%; /* 부모 요소를 기준으로 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    top: -70px; /* 필요하면 조정 */
+}
+
+#ipad{
+    display:none;
+}
+
+#mobile-image{
+    display: none;
+}
+
+.wishname-var{
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-160%, -47%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    display: flex;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wishname-var svg{
+    margin-bottom: 5px;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 두 개의 열 */
+    gap: 15px; /* 요소 간 간격 */
+  }
+  
+  .profile img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+  }
+  
+  .profile p {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 12px;
+    color: white;
+  }
+  
+  #video {
+    width: 750px;
+    height: 420px;
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-25%, -49%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    gap: 15px;
+  }
