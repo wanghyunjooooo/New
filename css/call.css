@@ -58,7 +58,7 @@ body {
     transform: scaleX(2); /* 가로로 2배 확장 */
     object-fit: fill; /* 왜곡 없이 부모에 꽉 채움 */
     position: absolute;
-    transform: translate(-85%, -7%);
+    transform: translate(-84.5%, -7%);
 }
 
 
@@ -158,7 +158,7 @@ body {
     transform: scaleX(2); /* 가로로 2배 확장 */
     object-fit: fill; /* 왜곡 없이 부모에 꽉 채움 */
     position: absolute;
-    transform: translate(-85%, -12%);
+    transform: translate(-86%, -12%);
 }
 .call-button{
     margin: 1%;

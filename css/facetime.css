@@ -41,6 +41,7 @@ body {
     display: flex;
     gap: 15px;
     display: flex;
+    flex-direction: column;
 }
 
 .new-facetime{
