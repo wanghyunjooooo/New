@@ -85,7 +85,7 @@ body {
     gap: 15px;
   }
 
-  @media screen and (max-width: 1024px) and (orientation: portrait) {
+  @media screen and (max-width: 1024px){
       #desktop{
         display: none;
       }
@@ -116,5 +116,30 @@ body {
       display: none;
     }
 
-    
+    #mobile-image{
+      display: block;
+      margin-left: 10%;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-content img{
+    width: 100%; /* 전체 화면 너비의 90% */
+    max-width: 1300px; /* 최대 너비를 제한 */
+    margin: 30px 0px 0px 30px; /* 가운데 정렬 */
+    padding: 20px; /* 내부 여백 */
+    box-sizing: border-box; /* padding 포함한 크기 계산 */
+}
+
+#video{
+  display: none;
+}
+
+.wishname-var{
+  transform: translate(-40%, -40%);
+}
+
   }
