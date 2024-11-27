@@ -1,0 +1,69 @@
+body {
+    background-color: black;
+    position: relative;
+    margin: 0; /* 여백 제거 */
+    padding: 0; /* 여백 제거 */
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+#ipad {
+    display: none;
+}
+
+#mobile-image {
+    display: none; /* 기본적으로 숨김 */
+}
+
+.items {
+    width: 100%; /* 부모 요소를 기준으로 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    top: -70px; /* 필요하면 조정 */
+}
+
+.calling{
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    display: flex;
+    gap: 15px;
+    display: flex;
+
+}
+#video-container {
+    width: 800px; /* 원하는 고정된 가로 크기 */
+    height: 800px; /* 원하는 고정된 세로 크기 */
+    overflow: hidden; /* 비디오가 컨테이너를 넘지 않도록 설정 */
+    position: relative;
+  }
+
+  
+#video{
+    z-index: -1;
+    width: 940px; /* 부모 너비에 맞춤 */
+    height: 450px; /* 부모 높이에 맞춤 */
+    transform: scaleX(2); /* 가로로 2배 확장 */
+    object-fit: fill; /* 왜곡 없이 부모에 꽉 채움 */
+    position: absolute;
+    transform: translate(-84.5%, -7%);
+}
+
+
+.call-button{
+    margin: 0 90px; /* 좌우로 10px 간격 */
+    transform: translate(-5%, 105%);
+
+}
