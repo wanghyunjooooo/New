@@ -58,7 +58,7 @@ body {
     transform: scaleX(2); /* 가로로 2배 확장 */
     object-fit: fill; /* 왜곡 없이 부모에 꽉 채움 */
     position: absolute;
-    transform: translate(-84.5%, -7%);
+    transform: translate(-85%, -7%);
 }
 
 
@@ -72,6 +72,17 @@ body {
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */
     text-align: center; /* 중앙 정렬 */
     margin: 0; /* 기본 여백 제거 */
+}
+
+#name-display {
+    width: 100px;           /* 고정된 너비 */
+    margin: 0 auto;         /* 수평 중앙 정렬 */
+    text-align: center;     /* 텍스트 가운데 정렬 */
+    padding: 10px 0;        /* 여백을 일정하게 */
+    font-size: 24px;        /* 폰트 크기 */
+    white-space: nowrap;    /* 텍스트가 줄바꿈 되지 않도록 */
+    overflow: hidden;       /* 텍스트가 넘칠 경우 잘리도록 */
+    text-overflow: ellipsis; /* 넘치는 텍스트에 ... 표시 */
 }
 @media screen and (max-width: 1024px) {
     #desktop {
@@ -93,11 +104,11 @@ body {
         transform: scaleX(2); /* 가로로 2배 확장 */
         object-fit: fill; /* 왜곡 없이 부모에 꽉 채움 */
         position: absolute;
-        transform: translate(-105%, -8%);
+        transform: translate(-91%, -8%);
     }
 
     .call-button{
-        margin: 0 90px; /* 좌우로 10px 간격 */
+        margin: 0 50px; /* 좌우로 10px 간격 */
         transform: translate(15%, 150%);
     
     }
@@ -142,15 +153,15 @@ body {
   
 #video{
     z-index: -1;
-    width: 340px; /* 부모 너비에 맞춤 */
+    width: 335px; /* 부모 너비에 맞춤 */
     height: 530px; /* 부모 높이에 맞춤 */
     transform: scaleX(2); /* 가로로 2배 확장 */
     object-fit: fill; /* 왜곡 없이 부모에 꽉 채움 */
     position: absolute;
-    transform: translate(-96%, -13%);
+    transform: translate(-85%, -12%);
 }
 .call-button{
-    margin: 0 20px; /* 좌우로 10px 간격 */
+    margin: 1%;
     transform: translate(45%, 105%);
 
 }
