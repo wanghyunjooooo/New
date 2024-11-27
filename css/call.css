@@ -68,6 +68,11 @@ body {
 
 }
 
+.calling h1 {
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    text-align: center; /* 중앙 정렬 */
+    margin: 0; /* 기본 여백 제거 */
+}
 @media screen and (max-width: 1024px) {
     #desktop {
         display: none; /* 이미지를 숨김 */
@@ -96,10 +101,62 @@ body {
         transform: translate(15%, 150%);
     
     }
-    .calling h1 {
+ .calling h1 {
         white-space: nowrap; /* 텍스트 줄바꿈 방지 */
         text-align: center; /* 중앙 정렬 */
         margin: 0; /* 기본 여백 제거 */
     }
   
+}
+
+@media screen and (max-width: 764px){
+    #ipad{
+        display: none;
+      }
+  
+      #mobile-image{
+        display: block;
+        margin-left: 10%;
+    }
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  .main-content img{
+      width: 100%; /* 전체 화면 너비의 90% */
+      max-width: 1300px; /* 최대 너비를 제한 */
+      margin: 30px 0px 0px 30px; /* 가운데 정렬 */
+      padding: 20px; /* 내부 여백 */
+      box-sizing: border-box; /* padding 포함한 크기 계산 */
+  }
+    
+  #video-container {
+    width: 340px; /* 원하는 고정된 가로 크기 */
+    height: 530px; /* 원하는 고정된 세로 크기 */
+    overflow: hidden; /* 비디오가 컨테이너를 넘지 않도록 설정 */
+    position: relative;
+  }
+
+  
+#video{
+    z-index: -1;
+    width: 340px; /* 부모 너비에 맞춤 */
+    height: 530px; /* 부모 높이에 맞춤 */
+    transform: scaleX(2); /* 가로로 2배 확장 */
+    object-fit: fill; /* 왜곡 없이 부모에 꽉 채움 */
+    position: absolute;
+    transform: translate(-96%, -13%);
+}
+.call-button{
+    margin: 0 20px; /* 좌우로 10px 간격 */
+    transform: translate(45%, 105%);
+
+}
+
+.calling h1 {
+    transform: translateX(15px); /* 오른쪽으로 살짝 이동 */
+}
+
 }
