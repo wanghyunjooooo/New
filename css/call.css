@@ -67,3 +67,39 @@ body {
     transform: translate(-5%, 105%);
 
 }
+
+@media screen and (max-width: 1024px) {
+    #desktop {
+        display: none; /* 이미지를 숨김 */
+    }
+    
+    #ipad{
+        position: relative; /* 자식 요소들이 부모를 기준으로 배치되도록 */
+        display: block;
+        width: 768px;
+        height: 1024px;
+        right: 30px;
+    }
+
+    #video{
+        z-index: -1;
+        width: 565px; /* 부모 너비에 맞춤 */
+        height: 575px; /* 부모 높이에 맞춤 */
+        transform: scaleX(2); /* 가로로 2배 확장 */
+        object-fit: fill; /* 왜곡 없이 부모에 꽉 채움 */
+        position: absolute;
+        transform: translate(-105%, -8%);
+    }
+
+    .call-button{
+        margin: 0 90px; /* 좌우로 10px 간격 */
+        transform: translate(15%, 150%);
+    
+    }
+    .calling h1 {
+        white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+        text-align: center; /* 중앙 정렬 */
+        margin: 0; /* 기본 여백 제거 */
+    }
+  
+}
