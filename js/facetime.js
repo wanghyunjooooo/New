@@ -26,3 +26,35 @@ function startCamera() {
 
   // 'name-display' id를 가진 h1 요소에 이름을 표시
   document.getElementById('name-display').innerText = name;
+
+    // h1 요소를 선택
+    const nameDisplay = document.getElementById('name-display');
+    const messageLink = document.getElementById('message-link');
+
+    // h1 텍스트에 맞춰 링크 수정
+    const name1 = nameDisplay.textContent.trim();
+
+    switch (name1) {
+        case "료":
+            messageLink.href = "nctwish/ryo.html";
+            break;
+        case "시온":
+            messageLink.href = "nctwish/sion.html";
+            break;
+        case "유우시":
+            messageLink.href = "nctwish/yushi.html";
+            break;
+        case "리쿠":
+            messageLink.href = "nctwish/riku.html";
+            break;
+        case "사쿠야":
+            messageLink.href = "nctwish/sakuya.html";
+            break;
+        case "재희":
+            messageLink.href = "nctwish/daeyoung.html";
+            break;
+        default:
+            // 이름이 일치하지 않으면 아무 것도 하지 않음
+            messageLink.href = "#";
+            break;
+    }
