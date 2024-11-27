@@ -84,3 +84,37 @@ body {
     color: white;
     gap: 15px;
   }
+
+  @media screen and (max-width: 1024px) and (orientation: portrait) {
+      #desktop{
+        display: none;
+      }
+
+      #ipad{
+        position: relative; /* 자식 요소들이 부모를 기준으로 배치되도록 */
+        display: block;
+        width: 768px;
+        height: 1024px;
+        right: 30px;
+      }
+
+      #video{
+        width: 270px;
+        height: 670px;
+        object-fit: none; /* 비율 유지하지 않음 */
+        object-position: center; /* 비디오 중앙 부분만 표시 */
+        overflow: hidden; /* 넘치는 부분 숨김 */
+        transform: translate(10%, -40%);
+    }
+    .wishname-var{
+      transform: translate(-100%, -40%);
+    }
+  }
+
+  @media screen and (max-width: 767px){
+    #ipad{
+      display: none;
+    }
+
+    
+  }
