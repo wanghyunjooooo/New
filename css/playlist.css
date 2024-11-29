@@ -1,0 +1,130 @@
+    body {
+        background-color: black;
+        position: relative;
+        margin: 0; /* 여백 제거 */
+        padding: 0; /* 여백 제거 */
+    }
+
+    .main-content {
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+    }
+
+
+    #ipad {
+        display: none;
+    }
+
+    #mobile-image {
+        display: none; /* 기본적으로 숨김 */
+    }
+
+    .items {
+        width: 100%; /* 부모 요소를 기준으로 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        position: relative;
+        top: -70px; /* 필요하면 조정 */
+    }
+    .playlist{
+            z-index: 2;
+            position: absolute;
+            top: 40%; 
+            left: 50%;
+            transform: translate(-50%, -40%);
+            z-index: 3; /* desktop 위로 배치 */
+            color: white;
+            display: flex;
+            gap: 90px;
+    }
+    .playlist-profile{
+        z-index: 2;
+        position: absolute;
+        top: 13%; 
+        left: 50%;
+        transform: translate(-50%, 0%);
+        z-index: 3; /* desktop 위로 배치 */
+        color: white;
+        display: flex;
+        gap: 700px;
+    }
+    @media screen and (max-width: 1024px){
+        #desktop{
+            display: none;
+          }
+          #ipad{
+            position: relative; /* 자식 요소들이 부모를 기준으로 배치되도록 */
+            display: block;
+            width: 768px;
+            height: 1024px;
+            right: 30px;
+          }
+
+          .playlist{
+            transform: translate(-45%, -30%);
+            flex-wrap: wrap; /* 아이템을 줄 바꿈 가능하게 설정 */
+            gap: 20px;
+    }
+    .playlist-profile{
+        transform: translate(-50%, 170%);
+        gap: 350px;
+    }
+    
+    .playlist img:nth-child(3) {
+        order: 1; /* 세 번째 이미지의 순서를 가장 마지막으로 설정 */
+    }
+
+          
+    }
+
+    @media screen and (max-width: 767px){
+        #ipad{
+            display: none;
+          }
+      
+          #mobile-image{
+            display: block;
+            margin-left: 10%;
+        }
+      
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      .main-content img{
+          width: 100%; /* 전체 화면 너비의 90% */
+          max-width: 1300px; /* 최대 너비를 제한 */
+          margin: 30px 0px 0px 30px; /* 가운데 정렬 */
+          padding: 20px; /* 내부 여백 */
+          box-sizing: border-box; /* padding 포함한 크기 계산 */
+      }
+      .playlist-profile{
+        transform: translate(-45%, 90%);
+        gap: 140px;
+    }
+      .playlist {
+        display: flex;
+        flex-wrap: wrap; /* 이미지가 넘칠 경우 줄바꿈 허용 */
+        gap: 15px; /* 이미지 간 간격 */
+        justify-content: space-between; /* 이미지들을 가로로 고르게 배치 */
+    }
+
+    .playlist img { 
+        width: 100px; /* 고정된 가로 크기 */
+        height: 130px; /* 고정된 세로 크기 */
+        object-fit: cover; /* 이미지 비율 유지하면서 크기 맞추기 */
+        height: auto; /* 이미지 비율을 유지하면서 크기 맞추기 */
+    }
+
+    .playlist img:nth-child(3) {
+        order: 3; /* 세 번째 이미지를 다음 줄로 보내기 위해 순서를 바꿈 */
+        width: 100px; /* 세 번째 이미지는 한 줄 전체를 차지하도록 설정 */
+        height: 130px; /* 고정된 크기 설정 */
+    }
+      
+    }
+
