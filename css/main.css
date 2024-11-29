@@ -123,20 +123,58 @@
 
 }
 
-@media screen and (max-width: 1024px) {
+#music-ipad{
+    display: none;
+}
+
+@media screen and (max-width: 1315px) {
     #desktop{
         display: none;
       }
 
-      #ipad{
-        position: relative; /* 자식 요소들이 부모를 기준으로 배치되도록 */
+      #music{
+        display: none;
+      }
+
+      #music-ipad{
         display: block;
+        width: 450px; /* 한 줄을 차지 */
+        margin: 0 auto 0px; /* 아래 요소와 간격 추가 */
+      }
+
+      .items {
+        top: -70px;
+    }
+    .new-song {
+        display: flex;
+        flex-wrap: wrap; /* 한 줄에 여러 개 배치 */
+        justify-content: center; /* 가로 중앙 정렬 */
+        gap: 15px; /* 요소 간 간격 */
+        transform: translate(-47%, -55%); /* 정확히 중앙으로 조정 */
+    }
+
+    .new-song img{
+        width: 210px;
+    }
+    
+    #ipad {
+        display: block;
+        margin: 0 auto; /* 가로 방향 중앙 정렬 */
+        position: relative; /* 상대 위치 설정 */
         width: 768px;
         height: 1024px;
-        right: 30px;
-      }
-      
-      #music{
-        display: none   ;
-      }
+        right: 25px;
+    }
+
+    .song-icons{
+        transform: translate(-10%, -300%); /* 정확히 중앙으로 조정 */
+    }
+
+    #icons-background{
+        transform: translate(5%, -565%); /* 정확히 중앙으로 조정 */
+    
+    }
+    .icons-img{
+         transform: translate(-45%, -840%); /* 정확히 중앙으로 조정 */
+    }
 }
