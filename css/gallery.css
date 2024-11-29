@@ -78,7 +78,7 @@ body {
 }
 
 
-@media screen and (max-width: 1024px) and (orientation: portrait) {
+@media screen and (max-width: 1024px){
     #desktop {
         display: none; /* 이미지를 숨김 */
     }
