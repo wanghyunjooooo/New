@@ -1,275 +1,142 @@
-* {
-    margin: 0;
-    padding: 0;
-}
 
-/* 전체 페이지 배경을 검정색으로 설정 */
-body {
+    body {
         background-color: black;
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* 두 개의 열로 분할 */
-        grid-template-rows: auto; /* 행은 콘텐츠에 맞춰 자동 설정 */
-        justify-items: center; /* 그리드 내 아이템들을 가로로 중앙 정렬 */
-        align-items: center; /* 세로로 중앙 정렬 */
-        height: 100vh;
+        position: relative;
+        margin: 0; /* 여백 제거 */
+        padding: 0; /* 여백 제거 */
+    }
     
-}
-
-.nct-logo {
-    grid-column: 1 / -1; /* 전체 열을 차지하도록 설정 */
-    justify-self: center; /* 가로 중앙에 배치 */
-    align-self: start; /* 세로로 상단에 배치 */
-    margin-top: 20px; /* 로고를 화면 위쪽에 더 가깝게 배치 */
-    z-index: -2; /* 로고가 다른 요소들보다 뒤에 위치하도록 설정 */
-    display: flex;
-    justify-content: center;
-}
-
-
-.desktop-img {
-    position: relative; /* items와 icons의 기준이 되도록 설정 */
-    position: absolute;
-    top: 30%; /* desktop-img의 위치를 화면 중앙에 더 가깝게 조정 */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1; /* 다른 요소 뒤에 배치 */
-}
-
-.ipad-img{
-    display: none;
-    position: relative; /* items와 icons의 기준이 되도록 설정 */
-    position: absolute;
-    top: 30%; /* desktop-img의 위치를 화면 중앙에 더 가깝게 조정 */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1; /* 다른 요소 뒤에 배치 */ 
-}
-
-.ipad-img-container {
-    width: 100%; /* 이미지가 컨테이너의 너비를 채우도록 설정 */
-    height: auto; /* 이미지 비율을 유지하면서 높이 조정 */
-    display: block; /* 블록 요소로 설정하여 여백 제거 */
-}
-.items {
-    position: absolute; /* absolute 위치 설정 */
-    display: flex;
-    flex-direction: row; /* 가로로 요소를 배치 */
-    justify-content: space-between; /* 요소들 사이에 공간을 균등하게 분배 */
-    align-items: center;
-    width: 720px; /* 부모 요소의 가로 크기를 차지하도록 설정 */
-    position: absolute;
-    z-index: 3;
-    gap: 20px; /* 요소들 사이의 간격을 줄임 */
-    left: 50%;
-    transform: translateX(-50%); /* 중앙에서 맞추기 */
-    margin-left: 60px; /* 살짝 오른쪽으로 이동 */
+    .main-content {
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+    }
     
-}
-.mv-container {
+    .items {
+        width: 100%; 
+        z-index: 1;
+        position: relative;
+        top: -70px; /* 필요에 따라 조정 */
+    }
+    
+    #ipad{
+        display:none;
+    }
+    
+    #mobile-image{
+        display: none;
+    }
+
+    #desktop {
+        display: block; /* 기본 inline 속성 제거 */
+        margin: 0 auto; /* 완전히 중앙 정렬 */
+        position: relative;
+    }
+    
+.new-song{
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-50%, -70%); /* 더 균형 잡힌 위치 */
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
     display: flex;
-    flex-direction: row; /* mv와 mv-pratice를 가로로 정렬 */
-    gap: 30px; /* mv와 mv-pratice 사이의 간격 조정 */
+    gap: 15px;
 }
 
-.items, .icons{
-    position: absolute; /* desktop-img를 기준으로 절대 위치 설정 */
+
+
+.new-song img {
+    display: block;  /* 이미지가 아래 요소들과 겹치도록 하기 위해 block 설정 */
+
 }
-
-.new-song,
-.mv,
-.mv-pratice {
-    margin-top: 20px; /* 요소들 간 간격 조정 */
-    display: flex;
-    flex-direction: column; /* 요소가 세로로 정렬되도록 설정 */
-    justify-content: center;
-    align-items: center;
-    max-width: 300px;
-}   
-
-
-
-.new-song-background {
-    position: absolute; /* 절대 위치로 설정 */
-    top: 10px;
-    z-index: 3; /* 배경이 더 아래에 위치하도록 설정 */
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.new-song-player {
-    position: absolute; /* 절대 위치로 설정 */
-    top: 10%;
-    left: -80px; /* 플레이어를 더 왼쪽으로 이동 */
-    z-index: 4; /* 플레이어가 배경 위에 오도록 설정 */
-    transition: all 0.3s ease;
-}
-.new-song-player.spin {
-    animation: spin 2s linear infinite; /* 회전 애니메이션 */
-}
-
 
 .song-icons {
-    
-    left: 5px;
-    top: 240px;
-    position: absolute; /* 절대 위치로 설정하여 부모 요소를 기준으로 위치 조정 */
-    transform: translate(-50%, -50%); /* 아이콘의 중심을 기준으로 정렬 */
-    z-index: 3; /* 배경 위에 오도록 설정 */
-    display: flex;
-    gap: 50px; /* 아이콘 사이의 간격 설정 */
-    font-size: 30px; /* 아이콘 크기 설정 */
+    display: flex;  /* 아이콘들을 가로로 나열 */
+    justify-content: center;  /* 아이콘들을 가로로 중앙 정렬 */
+    position: absolute;  /* 이미지 위에 겹치도록 위치 설정 */
+    top: 50%;  /* 이미지의 세로 중앙에 위치 */
+    left: 50%;  /* 이미지의 가로 중앙에 위치 */
+    transform: translate(-200%, 150%);  /* 정확히 중앙에 위치하도록 */
+    z-index: 1;  /* 아이콘들이 이미지 위에 위치하도록 설정 */
 }
 
+.song-icons i {
+    margin: 0 15px;  /* 아이콘 간의 간격을 조정 */
+    color: #333;  /* 아이콘 색상 */
+    font-size: 2rem;  /* 아이콘 크기 */
+}
+#play-pause-btn {
+    left: 50%;  /* play-pause 버튼을 중앙으로 배치 */
+    top: 60%;  /* 원하는 위치로 조정 */
+}
+
+#volume-btn {
+    left: 50%;  /* volume 버튼을 중앙으로 배치 */
+    top: 70%;  /* 원하는 위치로 조정 */
+}
+
+.bi-soundwave {
+    left: 50%;  /* soundwave 아이콘을 중앙으로 배치 */
+    top: 40%;  /* 원하는 위치로 조정 */
+}
 .icons {
-    position: absolute; /* 절대 위치로 설정 */
-    top: 73%; /* 위치 조정 (필요에 따라 조정) */
-    left: 50%; /* 부모 요소의 가로 중앙에 위치 */
-    transform: translate(-50%, -50%); /* 요소의 중심을 왼쪽으로 이동하여 정중앙에 맞춤 */
-    z-index: 6; /* 가장 위에 오도록 설정 */
+    position: relative; /* 부모 요소 기준으로 위치 설정 */
+    width: 100%; /* 화면 전체 너비 */
+    height: auto; /* 높이는 콘텐츠에 따라 자동 설정 */
+    z-index: 2; /* 다른 요소보다 위로 배치 */
+    display: flex; /* 플렉스박스로 아이템 정렬 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    transform: translate(0%, 50%); /* 정확히 중앙으로 배치 */
 }
 
-.icons-background,
-.icons-img {
-    position: absolute; /* 절대 위치로 설정 */
+.icons-background {
+    position: absolute; /* 부모 요소를 기준으로 배치 */
     top: 50%; /* 부모 요소의 세로 중앙 */
     left: 50%; /* 부모 요소의 가로 중앙 */
-    transform: translate(-50%, -50%); /* 요소의 중심을 정중앙에 맞춤 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.icons-img img {
-    width: 50px; /* 아이콘의 너비를 50px로 설정 (원하는 크기로 변경 가능) */
-    height: 50px; /* 아이콘의 높이를 50px로 설정 (원하는 크기로 변경 가능) */
-}
-
-
-
-@media screen and (max-width: 1367px) {
-    .mv-container {
-        display: flex;
-        flex-direction: row; /* mv와 mv-pratice를 가로로 정렬 */
-        gap: 30px; /* mv와 mv-pratice 사이의 간격 조정 */
-    }
-    .items {
-        position: absolute; /* absolute 위치 설정 */
-        display: flex;
-        flex-direction: row; /* 가로로 요소를 배치 */
-        justify-content: space-between; /* 요소들 사이에 공간을 균등하게 분배 */
-        align-items: center;
-        width: 720px; /* 부모 요소의 가로 크기를 차지하도록 설정 */
-        margin-top: 100px;
-        z-index: 3;
-        gap: 20px; /* 요소들 사이의 간격을 줄임 */
-        left: 50%;
-        transform: translateX(-50%); /* 중앙에서 맞추기 */
-        margin-left: 60px; /* 살짝 오른쪽으로 이동 */
-    }
    
+    width: auto; /* 콘텐츠에 따라 너비 설정 */
+    height: auto; /* 콘텐츠에 따라 높이 설정 */
+    z-index: 1; /* 아이콘 뒤에 배치 */
 }
 
+
+.icons-img {
+    position: absolute; /* 배경 이미지 위에 겹치도록 설정 */
+    top: 50%; /* 부모 요소의 세로 중앙 */
+    left: 50%; /* 부모 요소의 가로 중앙 */
+    transform: translate(-50%, -680%); /* 정확히 중앙으로 조정 */
+    z-index: 2; /* 배경 이미지보다 위에 배치 */
+    display: flex; /* 아이콘들을 가로로 나열 */
+    gap: 15px; /* 아이콘 간격 설정 */
+}
+
+.icons-img a img {
+    width: 45px; /* 아이콘 크기 설정 */
+    height: 45px;
+}
+
+#icons-background{
+    transform: translate(0%, -450%); /* 정확히 중앙으로 조정 */
+
+}
 
 @media screen and (max-width: 1024px) {
-    .desktop-img {
-        display: none; /* 작은 화면에서 desktop-img를 숨김 */
-    }
+    #desktop{
+        display: none;
+      }
 
-    .ipad-img {
-        display: block; /* 작은 화면에서 ipad-img를 표시 */
-        width: 140%;
-        max-width: 1000px;
-        position: relative;
-        margin: 0 auto; /* 화면 가운데 정렬 */
-        top: 50%; /* 세로 중앙으로 위치 */
-        transform: translateY(-50%); /* 완전히 가운데 정렬 */
-    }
-
-    .items {
-        position: absolute;
-        top: 20%; /* ipad-img 내부에서 상단에 위치 */
-        left: 50%;
-        transform: translateX(-50%);
-        flex-direction: column; /* 세로 방향으로 정렬 */
-        align-items: center;
-        width: 100%;
-        gap: 20px;
-    }
-
-    .new-song {
-        order: 1;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .mv-container {
-        order: 2;
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
-        width: 100%;
-    }
-
-    .icons {
-        order: 3;
-        position: absolute;
-        bottom: 10%; /* ipad-img의 아래쪽에 위치 */
-        left: 50%;
-        transform: translateX(-50%);
-        top: auto; /* 위치 재설정 */
-    }
+      #ipad{
+        position: relative; /* 자식 요소들이 부모를 기준으로 배치되도록 */
+        display: block;
+        width: 768px;
+        height: 1024px;
+        right: 30px;
+      }
+      
+      #music{
+        display: none   ;
+      }
 }
-
-@media screen and (max-width: 768px) {
-    .desktop-img {
-        display: none; /* 작은 화면에서 desktop-img를 숨김 */
-    }
-
-    .ipad-img {
-        display: block; /* 작은 화면에서 ipad-img를 표시 */
-        width: 100%; /* 이미지가 화면 너비를 채우도록 설정 */
-        max-width: 800px; /* 최대 너비를 제한 */
-    }
-
-    .items {
-        flex-direction: column; /* 세로 방향으로 정렬 */
-        align-items: center;
-        width: 100%;
-        gap: 20px;
-        top: 20%; /* 화면 상단으로 올려 위치 조정 */
-        transform: translate(-50%, -20%); /* 중앙 정렬 유지 */
-    }
-
-    .new-song {
-        order: 1; /* new-song을 첫 번째로 위치 */
-        width: 100%; /* 화면 전체 너비 */
-        margin-bottom: 20px;
-    }
-
-    .mv-container {
-        order: 2; /* mv-container를 두 번째로 위치 */
-        flex-direction: row; /* mv와 mv-practice를 나란히 배치 */
-        justify-content: center;
-        gap: 10px; /* 간격 설정 */
-        width: 100%;
-    }
-
-    .icons {
-        order: 3; /* icons를 세 번째로 위치 */
-        top: 90%; /* ipad-img 내부에서 아래로 내려가도록 조정 */
-        transform: translate(-50%, -10%);
-    }
-
-    .mv-container, .icons {
-        position: absolute;
-        bottom: 10%; /* ipad-img의 아래쪽에 위치 */
-        left: 55%;
-        transform: translateX(-50%);
-    }
-
-}
-
