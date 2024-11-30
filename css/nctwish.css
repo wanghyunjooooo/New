@@ -1,0 +1,115 @@
+body {
+    background-color: black;
+    position: relative;
+    margin: 0; /* 여백 제거 */
+    padding: 0; /* 여백 제거 */
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.items {
+    width: 100%; /* 부모 요소를 기준으로 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    top: -70px; /* 필요하면 조정 */
+}
+
+.items h2{
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4; /* desktop 위로 배치 */
+    color: white;
+    gap: 15px;
+}
+
+#ipad{
+    display:none;
+}
+
+#mobile-image{
+    display: none;
+}
+#yushi-video{
+    width: 320px;
+    height: 420px;
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-135%, -40%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    gap: 15px;
+}
+#video{
+    width: 750px;
+    height: 420px;
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-30%, -40%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    gap: 15px;
+  }
+
+  .items svg{
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-2600%, -1200%);
+    z-index: 7; /* desktop 위로 배치 */
+    color: black;
+    gap: 15px;
+  }
+#playButton{
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-50%, 350%);
+    z-index: 7; /* desktop 위로 배치 */
+    color: black;
+    gap: 15px;
+    border: none;
+    font-weight: bolder;
+}
+
+#not-call{
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-50%, 180%);
+    z-index: 7; /* desktop 위로 배치 */
+    color: black;
+    gap: 15px;
+}
+
+        /* 비디오가 재생될 때 */
+        #yushi-video.playing {
+            background-color: black; /* 배경은 여전히 검정 */
+        }
+
+        /* 비디오의 포스터 이미지 */
+        #yushi-video[poster] {
+            display: block; /* 비디오가 재생되기 전에는 포스터 이미지를 표시 */
+        }
+        
+        audio{
+            display: none;
+        }
+#yushi{
+    display: block;
+}

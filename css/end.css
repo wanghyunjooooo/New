@@ -1,0 +1,113 @@
+body {
+    background-color: black;
+    position: relative;
+    margin: 0; /* 여백 제거 */
+    padding: 0; /* 여백 제거 */
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+#ipad {
+    display: none;
+}
+
+#mobile-image {
+    display: none; /* 기본적으로 숨김 */
+}
+
+.items {
+    width: 100%; /* 부모 요소를 기준으로 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    top: -70px; /* 필요하면 조정 */
+}
+
+.items h2{
+    position: absolute;
+    color: white;
+    transform: translate(0%, -400%); /* 가운데 정렬 */
+}
+
+.items svg{
+    position: absolute;
+    display: flex;
+    color: white;
+    transform: translate(-800%, -50%); /* 가운데 정렬 */
+}
+
+  
+@media screen and (max-width: 1024px) {
+    #desktop {
+        display: none; /* 이미지를 숨김 */
+    }
+    
+    #ipad{
+        position: relative; /* 자식 요소들이 부모를 기준으로 배치되도록 */
+        display: block;
+        width: 768px;
+        height: 1024px;
+        right: 30px;
+    }
+
+    .items svg{
+        position: absolute;
+        display: flex;
+        color: white;
+        transform: translate(-500%, -50%); /* 가운데 정렬 */
+    }
+}
+
+@media screen and (max-width: 767px){
+    #ipad{
+        display: none;
+    }
+
+    #mobile-image{
+        display: block;
+        margin-left: 20%;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .main-content img{
+        width: 100%; /* 전체 화면 너비의 90% */
+        max-width: 1300px; /* 최대 너비를 제한 */
+        margin: 30px 0px 0px 30px; /* 가운데 정렬 */
+        padding: 20px; /* 내부 여백 */
+        box-sizing: border-box; /* padding 포함한 크기 계산 */
+    }
+
+    .items{
+        gap:30px;
+    }
+
+    
+.items h2{
+    font-size: 20px;
+    position: absolute;
+    color: white;
+    transform: translate(5%, -400%); /* 가운데 정렬 */
+}
+
+.items svg{
+    display: flex;
+    position: absolute;
+    display: flex;
+    color: white;
+    transform: translate(-350%, -50%); /* 가운데 정렬 */
+}
+
+#facetime{
+    margin-left: 10px;
+}
+}

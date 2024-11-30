@@ -58,3 +58,6 @@ function startCamera() {
             messageLink.href = "#";
             break;
     }
+
+    
+    

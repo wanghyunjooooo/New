@@ -13,8 +13,53 @@
        <div class="items">
         <img src="/img/desktop (2).png" alt="desktop-img" id="desktop">
         <img src="/img/ipad-img.png" alt="ipad-img" id="ipad">
-        <img src="/img/phone.png" alt="phone" id="mobile-image">
-        <img src="" alt="">
+        <img src="/img/phone.png" alt="phone" id="mobile-image">  
+        <a href="/new-facetime.html"><svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.578125 11.4162V6.98438L16.0043 0.507101V5.3544L5.8196 9.15767L5.9794 8.9233V9.48793L5.8196 9.2429L16.0043 13.0568V17.8935L0.578125 11.4162Z" fill="white"/>
+            </svg></a>
+        <a href="/end.html"><img src="/img/not-call.png" alt="" id="not-call" style="display: none;"></a>
+        <!-- 오디오 자동 재생 -->
+        <h2 id="waitingMessage">영상통화가 곧 시작하니 대기해주시기 바랍니다.</h2>
+        <audio id="audio" controls>
+            <source src="/audio/유우시-안녕하세요.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button id="playButton">시작하기</button>
+        <video id="yushi-video" class="video-style" muted playsinline poster="/img/gallery-유우시1.jpg">
+            <source src="/video/유우시-안녕.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+        
+
+        <video id="video" autoplay></video>
        </div>
+       <script>
+         // 버튼 클릭 시 오디오 및 비디오 재생하고, 요소 숨기기
+         document.getElementById('playButton').addEventListener('click', function() {
+            var audio = document.getElementById('audio');
+            var video = document.getElementById('yushi-video');
+            var waitingMessage = document.getElementById('waitingMessage');
+            var playButton = document.getElementById('playButton');
+            var svgIcon = document.querySelector('a svg');  // SVG 아이콘
+            var notCallImage = document.getElementById('not-call');  // not-call
+
+            // 오디오 및 비디오 재생
+            audio.play();
+            video.play();
+
+            // 비디오가 재생 중일 때 클래스 추가
+            video.classList.add('playing');
+
+            // 버튼 클릭 시 요소들 숨기기
+            waitingMessage.style.display = 'none';
+            playButton.style.display = 'none';
+            svgIcon.style.display = 'none';  // SVG 아이콘 숨기기
+               // not-call 이미지 보이기
+             notCallImage.style.display = 'block';
+        });
+
+
+       </script>
+        <script src="/js/facetime.js"></script>
 </body>
 </html>
