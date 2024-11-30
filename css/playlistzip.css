@@ -1,0 +1,139 @@
+body {
+    background-color: black;
+    position: relative;
+    margin: 0; /* 여백 제거 */
+    padding: 0; /* 여백 제거 */
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+#ipad {
+    display: none;
+}
+
+#mobile-image {
+    display: none; /* 기본적으로 숨김 */
+}
+
+.items {
+    width: 100%; /* 부모 요소를 기준으로 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    top: -70px; /* 필요하면 조정 */
+}   
+
+.left-content{
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-170%, -47%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    display: flex;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-content{
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-20%, -25%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* 아이템 중앙 정렬 */
+}
+.right-content svg {
+    width: 32px; /* 기존 16px에서 32px로 크기 증가 */
+    height: 32px; /* 동일하게 증가 */
+    transform: translate(600%, -775%);
+    top: 10px; /* 원하는 위치 값으로 조정 */
+    left: 10px; /* 원하는 위치 값으로 조정 */
+    z-index: 5; /* img 태그의 z-index보다 높게 설정 */
+    color: #EB3144;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+.right-content img {
+    z-index: 1; /* i 태그보다 낮은 값으로 설정 */
+}
+
+
+.items a{
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-2700%, -1300%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    display: flex;
+    gap: 15px;
+    display: flex;
+}
+
+.left-content svg{
+    margin-left: 30%;
+}
+
+
+.play-container {
+    display: flex;
+    justify-content: center; /* 요소들을 수평으로 가운데 정렬 */
+    gap: 10px; /* 이미지 간의 간격 조정 */
+}
+
+.play {
+    width: 105px;
+    height: auto;
+}
+
+@media screen and (max-width: 1024px){
+    #desktop{
+        display: none;
+      }
+
+      #ipad{
+        position: relative; /* 자식 요소들이 부모를 기준으로 배치되도록 */
+        display: block;
+        width: 768px;
+        height: 1024px;
+        right: 30px;
+      }
+
+    .right-content{
+        transform: translate(-50%, 15%);
+    }
+
+    #title-img{
+        margin-left: 15%;
+        width: 70%;
+    }
+
+    .left-content svg{
+        margin-left: 35%;
+    }
+    
+
+    .left-content{
+        transform: translate(-50%, -85%);
+    }
+
+    .items a{
+        transform: translate(-1500%, -1300%);
+    }
+}
