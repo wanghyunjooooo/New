@@ -102,6 +102,10 @@ body {
     height: auto;
 }
 
+#title-list-phone{
+    display: none;
+}
+
 @media screen and (max-width: 1024px){
     #desktop{
         display: none;
@@ -136,4 +140,74 @@ body {
     .items a{
         transform: translate(-1500%, -1300%);
     }
+}
+
+@media screen and (max-width: 767px){
+    #ipad{
+        display: none;
+    }
+
+    #mobile-image{
+        display: block;
+        margin-left: 10%;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .main-content img{
+        width: 100%; /* 전체 화면 너비의 90% */
+        max-width: 1300px; /* 최대 너비를 제한 */
+        margin: 30px 0px 0px 30px; /* 가운데 정렬 */
+        padding: 20px; /* 내부 여백 */
+        box-sizing: border-box; /* padding 포함한 크기 계산 */
+    }
+    #title-list{
+        display: none;
+    }
+    #title-list-phone{
+        transform: translate(7%, 40%);
+        display: block;
+    }
+    #title-img{
+        margin-left: 5%;
+        width: 150px;
+    }
+   .right-content svg{
+    width: 20px;
+    height: 20px;
+    margin-bottom:20px;
+    transform: translate(690%, -480%);
+   }
+
+   
+
+   .left-content{
+    transform: translate(-40%, -70%);
+   }
+
+   .play-container {
+    display: flex;
+    justify-content: flex-start; /* 가로로 배치, 왼쪽 정렬 */
+    gap: 10px; /* 이미지 간의 간격 */
+    flex-wrap: nowrap; /* 한 줄로 배치되도록 */
+    width: 100%; /* 부모 요소의 너비를 100%로 설정 */
+    box-sizing: border-box; /* padding 포함 크기 계산 */
+}
+
+.play {
+    display: flex;
+    flex-direction: row; /* 요소들을 가로로 배치 */
+    gap: 10px; /* 이미지 간의 간격 */
+    width: 130px; /* 각 이미지의 너비 */
+    height: auto; /* 이미지 높이는 비율에 맞게 */
+    margin: 10px; /* 여백 제거 */
+    margin-left: 20px;
+    max-width: 100%; /* 화면 크기에 맞춰서 조정 */
+}
+
+.items a{
+    transform: translate(-700%, -1500%);
+}
 }
