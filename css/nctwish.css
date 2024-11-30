@@ -167,4 +167,74 @@ body {
   }
 
 
+}
+
+@media screen and (max-width: 767px){
+    #ipad{
+        display: none;
+      }
+  
+      #mobile-image{
+        display: block;
+        margin-left: 10%;
     }
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  .main-content img{
+      width: 100%; /* 전체 화면 너비의 90% */
+      max-width: 1300px; /* 최대 너비를 제한 */
+      margin: 30px 0px 0px 30px; /* 가운데 정렬 */
+      padding: 20px; /* 내부 여백 */
+      box-sizing: border-box; /* padding 포함한 크기 계산 */
+  }
+  #yushi-video{
+    width: 100%; /* 부모 요소의 너비를 기준으로 크기를 설정 */
+    max-width: 330px; /* 최대 크기를 설정 */
+    height: auto; /* 원본 비율 유지 */
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-43%, -41%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    gap: 15px;
+}
+#video{
+    width: 200px;
+    height: 100px;
+    z-index: 2;
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(10%, -240%);
+    z-index: 3; /* desktop 위로 배치 */
+    color: white;
+    gap: 15px;
+  }
+  h2 {
+    font-size: 9px; /* 작은 화면에서 폰트 크기 줄이기 */
+}
+
+.items h2{
+    position: absolute;
+    top: 40%; /* sub-content 내부에서 겹치게 배치 */
+    left: 50%;
+    transform: translate(-40%, -50%);
+    z-index: 4; /* desktop 위로 배치 */
+    color: white;
+    gap: 15px;
+}
+
+.items svg{
+    transform: translate(-800%, -1300%);
+  
+  }
+  #playButton{
+    transform: translate(-35%, 300%);
+  }
+}
