@@ -33,33 +33,8 @@
 
         <video id="video" autoplay></video>
        </div>
-       <script>
-         // 버튼 클릭 시 오디오 및 비디오 재생하고, 요소 숨기기
-         document.getElementById('playButton').addEventListener('click', function() {
-            var audio = document.getElementById('audio');
-            var video = document.getElementById('yushi-video');
-            var waitingMessage = document.getElementById('waitingMessage');
-            var playButton = document.getElementById('playButton');
-            var svgIcon = document.querySelector('a svg');  // SVG 아이콘
-            var notCallImage = document.getElementById('not-call');  // not-call
 
-            // 오디오 및 비디오 재생
-            audio.play();
-            video.play();
-
-            // 비디오가 재생 중일 때 클래스 추가
-            video.classList.add('playing');
-
-            // 버튼 클릭 시 요소들 숨기기
-            waitingMessage.style.display = 'none';
-            playButton.style.display = 'none';
-            svgIcon.style.display = 'none';  // SVG 아이콘 숨기기
-               // not-call 이미지 보이기
-             notCallImage.style.display = 'block';
-        });
-
-
-       </script>
+        <script src="/js/nctwish.js"></script>
         <script src="/js/facetime.js"></script>
 </body>
 </html>
