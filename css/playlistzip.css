@@ -56,18 +56,20 @@ body {
     flex-direction: column;
     align-items: center;    /* 아이템 중앙 정렬 */
 }
-.right-content svg {
+.right-content i {
     width: 32px; /* 기존 16px에서 32px로 크기 증가 */
     height: 32px; /* 동일하게 증가 */
-    transform: translate(600%, -775%);
+    font-size: 30px;
+    transform: translate(700%, -775%);
     top: 10px; /* 원하는 위치 값으로 조정 */
     left: 10px; /* 원하는 위치 값으로 조정 */
-    z-index: 5; /* img 태그의 z-index보다 높게 설정 */
+    z-index: 10; /* img 태그의 z-index보다 높게 설정 */
     color: #EB3144;
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
 }
+
 .right-content img {
     z-index: 1; /* i 태그보다 낮은 값으로 설정 */
 }
@@ -174,7 +176,8 @@ body {
         margin-left: 5%;
         width: 150px;
     }
-   .right-content svg{
+   .right-content i{
+    font-size: 20px;
     width: 20px;
     height: 20px;
     margin-bottom:20px;
