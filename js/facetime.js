@@ -36,22 +36,22 @@ function startCamera() {
 
     switch (name1) {
         case "료":
-            messageLink.href = "nctwish/ryo.html";
+            messageLink.href = "nctwish/yushi.html";
             break;
         case "시온":
-            messageLink.href = "nctwish/sion.html";
+            messageLink.href = "nctwish/yushi.html";
             break;
         case "유우시":
             messageLink.href = "nctwish/yushi.html";
             break;
         case "리쿠":
-            messageLink.href = "nctwish/riku.html";
+            messageLink.href = "nctwish/yushi.html";
             break;
         case "사쿠야":
-            messageLink.href = "nctwish/sakuya.html";
+            messageLink.href = "nctwish/yushi.html";
             break;
         case "재희":
-            messageLink.href = "nctwish/daeyoung.html";
+            messageLink.href = "nctwish/yushi.html";
             break;
         default:
             // 이름이 일치하지 않으면 아무 것도 하지 않음
