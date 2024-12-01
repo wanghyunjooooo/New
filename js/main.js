@@ -26,3 +26,18 @@ document.addEventListener('DOMContentLoaded', function () {
         isPlaying = false;
     });
 });
+
+document.getElementById('arrow-right').addEventListener('click', function() {
+    var mvPracticeImg = document.getElementById('mv-pratice-img');
+    var mvImg = document.getElementById('mv-img');
+
+    // mv-pratice-img를 보이게 설정하고 mv-img 숨기기 (모바일 화면에서만)
+    mvPracticeImg.style.display = 'block';
+    mvImg.style.display = 'none';
+
+    // 2초 후에 mv-pratice-img 숨기고 mv-img 보이게 설정
+    setTimeout(function() {
+        mvPracticeImg.style.display = 'none'; // mv-pratice-img 숨기기
+        mvImg.style.display = 'block'; // mv-img 보이기 (모바일에서는 이미 숨겨짐)
+    }, 2000); // 2초
+});

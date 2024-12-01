@@ -185,6 +185,15 @@ display: none;
 .icons-img{
      transform: translate(-45%, -840%); /* 정확히 중앙으로 조정 */
 }
+/* mv-pratice-img는 모든 화면에서 계속 보이게 설정 */
+#mv-pratice-img {
+    display: block;
+}
+
+/* 모바일에서만 mv-img 숨기고 다른 화면에서는 보이게 설정 */
+#mv-img {
+    display: block; /* 기본적으로 mv-img는 보이게 설정 */
+}
 }
 
 @media screen and (max-width: 767px){
@@ -199,15 +208,13 @@ display: none;
         top: 50%; /* 상단 50% */
         transform: translate(200%, -35%); /* 요소를 정확히 중앙에 맞추기 */
     }
-    #mv-pratice-img{
-        display: none;
-    }
 
     #music-ipad{
         display: none;
     }
 
     #music-phone{
+        transform: translate(0%, -190%);
         margin-left: 20px;
         display: block;
         width: 150%;
@@ -231,6 +238,17 @@ display: none;
         transform: translate(-50%, -450%); /* 이미지 아이콘 재조정 */
     }
 
+    #mv-pratice-img{
+        display: none;
+    }
+
+    #mv-img, #mv-pratice-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+    }
     .new-song {
         position: relative;
         position: absolute;
